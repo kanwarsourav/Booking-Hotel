@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import Hero from '../Hero/Hero'
 import Destination from '../Destination/Destination'
-import BestHotel from '../Hotels/BestHotels'
+import BestHotel from '../Hotel/BestHotels'
 
 function Home() {
   return (
