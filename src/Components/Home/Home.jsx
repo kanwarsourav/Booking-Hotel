@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import Hero from '../Hero/Hero'
 import Destination from '../Destination/Destination'
-import BestHotels from '../Hotels/BestHotels'
+import BestHotel from '../Hotels/BestHotels'
 
 function Home() {
   return (
@@ -10,7 +10,7 @@ function Home() {
     <Navbar/>
     <Hero/>
     <Destination/>
-    <BestHotels/>
+    <BestHotel/>
     </>
   )
 }
