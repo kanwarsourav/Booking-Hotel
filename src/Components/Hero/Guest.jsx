@@ -13,7 +13,7 @@ export default function Guest() {
     setOptions((prev) => {
       return {
         ...prev,
-        [name]: operation === "i" ? operation[name] + 1 : operation[name],
+        [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
       };
     });
   };
@@ -25,7 +25,7 @@ export default function Guest() {
           <label>Guests</label>
           <span
             onClick={() => setOpenOptions(!openOptions)}
-          >{`${options.adult} adult, ${options.children}children, ${options.room} room `}</span>
+          >{`${options.adult} Adult, ${options.children} Children, ${options.room} Room `}</span>
           {openOptions && (
             <div className="options">
               <div className="option-item">
@@ -42,13 +42,12 @@ export default function Guest() {
                   </button>
                   <span>{options.adult}</span>
                   <button
-                    disabled={options.adult <= 1}
                     className="option-counter-button"
                     onClick={() => {
                       handleOption("adult", "i");
                     }}
                   >
-                    <FaPlus/>
+                    <FaPlus />
                   </button>
                 </div>
               </div>
@@ -57,7 +56,7 @@ export default function Guest() {
                 <span>Childern</span>
                 <div className="option-counter">
                   <button
-                    disabled={options.adult <= 1}
+                    disabled={options.children <= 0}
                     className="option-counter-button"
                     onClick={() => {
                       handleOption("children", "d");
@@ -65,15 +64,14 @@ export default function Guest() {
                   >
                     <FaMinus />
                   </button>
-                  <span>{options.adult}</span>
+                  <span>{options.children}</span>
                   <button
-                    disabled={options.adult <= 1}
                     className="option-counter-button"
                     onClick={() => {
                       handleOption("children", "i");
                     }}
                   >
-                    <FaPlus/>
+                    <FaPlus />
                   </button>
                 </div>
               </div>
@@ -82,7 +80,7 @@ export default function Guest() {
                 <span>Room</span>
                 <div className="option-counter">
                   <button
-                    disabled={options.adult <= 1}
+                    disabled={options.room <= 1}
                     className="option-counter-button"
                     onClick={() => {
                       handleOption("room", "d");
@@ -90,15 +88,14 @@ export default function Guest() {
                   >
                     <FaMinus />
                   </button>
-                  <span>{options.adult}</span>
+                  <span>{options.room}</span>
                   <button
-                    disabled={options.adult <= 1}
                     className="option-counter-button"
                     onClick={() => {
                       handleOption("room", "i");
                     }}
                   >
-                    <FaPlus/>
+                    <FaPlus />
                   </button>
                 </div>
               </div>
