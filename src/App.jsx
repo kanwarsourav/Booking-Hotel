@@ -1,11 +1,13 @@
 import './App.css'
+import React from 'react'
+import Home from './Components/Home/Home'
 
 function App() {
   
 
   return (
     <>
-     <h1>Sourav</h1>
+     <Home/>
     </>
   )
 }
