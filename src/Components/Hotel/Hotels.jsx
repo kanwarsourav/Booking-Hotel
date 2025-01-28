@@ -1,7 +1,15 @@
 import React from "react";
 import { CiLocationOn } from "react-icons/ci";
+import { useNavigate } from "react-router-dom";
 
 export default function Hotels({hotels, heading}) {
+
+const navigate = useNavigate()
+
+const handleViewDetail = (id) =>{
+  navigate(`/hotels/${id}`)
+}
+
   return (
     <>
       <div className="hotels-container">
@@ -9,12 +17,12 @@ export default function Hotels({hotels, heading}) {
         <div className="hotels">
           {hotels.map((hotel) => (
             <div key={hotel.id} className="hotel-item">
-              <img src={hotel.image} alt="" className="hotel-image" />
+              <img src={hotel.image} alt="" className="hotel-image" onClick={() => handleViewDetail(hotel.id)}/>
               <div className="hotel-content">
                 <span className="hotel-location">
                   <CiLocationOn className="icon" /> {hotel.location}
                 </span>
-                <span className="hotel-name">{hotel.name}</span>
+                <span className="hotel-name" onClick={() => handleViewDetail(hotel.id)}>{hotel.name}</span>
                 <div className="hotel-rate">
                   <button>{hotel.rate}</button>
                   <span>{hotel.review}</span>
